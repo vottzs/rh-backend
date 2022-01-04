@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from app.models import HIRING_STAGES
 
 def add_views(app: Flask):
     app.add_url_rule('/hiring_stages', view_func=get_hiring_stages)
