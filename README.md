@@ -8,8 +8,8 @@
 
     ```sh
     
-    $ cd rh\server
-    $ python3 -m venv env
+    $ cd rh-backend
+    $ python -m venv env
     
     For Linux users:
     $ source env/bin/activate
@@ -17,11 +17,11 @@
     For Windows users:
     $ .\env\Scripts\activate
     
-    (env)$ pip install -r requirements.txt
-    (env)$ python app.py
+    (env)$ pip install -r requirements\libs.txt
+    (env)$ python server.py
     ```
 
-    Navigate to [http://localhost:5001/hiring_stages](http://localhost:5001/hiring_stages)
+    Navigate to [http://localhost:7011/hiring_stages](http://localhost:7011/hiring_stages)
 
 
 ## How to execute this project after installation?
