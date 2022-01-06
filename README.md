@@ -25,9 +25,7 @@
 
 
 ## How to execute this project after installation?
-  
 
-    
     $ cd rh-backend
     
     For Linux users:
