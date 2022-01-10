@@ -17,7 +17,7 @@
     For Windows users:
     $ .\env\Scripts\activate
     
-    (env)$ pip install -r requirements/libs.txt
+    (env)$ pip install -r requirements\libs.txt
     (env)$ python server.py
     ```
 
