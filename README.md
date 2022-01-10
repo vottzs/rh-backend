@@ -28,7 +28,7 @@
   
 
     
-    $ cd rh\server
+    $ cd rh-backend
     
     For Linux users:
     $ source env/bin/activate
@@ -36,4 +36,4 @@
     For Windows users:
     $ .\env\Scripts\activate
     
-    (env)$ python app.py
+    (env)$ python server.py
