@@ -81,7 +81,7 @@ OFFICES_DATA=[
     
   { 'Title':'Childrens Party Animator',
     'Description':'Do your best to transform Childrens Day',
-    'Salary Range Min':'$ 500,00'
+    'Salary Range Min':'$ 500,00',
     'Salary Range Max':'$ 2000,00' 
     }
 
