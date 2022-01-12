@@ -7,17 +7,7 @@ HIRING_STAGES = [
   'Offered',
   'Offer Accepted',
   'Offer Declined',
-  'Hired',
-  'name',
-  'address',
-  'age',
-  'e-mail',
-  'phone',
-  'gender',
-  'marital status',
-  'nationality',
-  'kid',
-  'Linkedin'
+  'Hired'
 ]
 
 JOB_STATUS = [
@@ -37,3 +27,34 @@ HIRING_TYPES = [
   'Full time',
   'Part time'
 ]
+CANDIDATES_DATA = [
+  'Name',
+  'Address',
+  'Age',
+  'E-mail',
+  'Phone',
+  'Gender',
+  'Marital status',
+  'Nationality',
+  'Kid',
+  'Linkedin'
+]
+OFFICES_DATA = [
+'Name',
+'Address',
+'Phone'
+] 
+COMPANIES_DATA = [
+  'Name'
+]
+USERS_DATA = [
+  'Username',
+  'Password'
+]
+JOB_POSTINGS_DATA = [
+'Title',
+'Description',
+'Salary Range Min',
+'Salary Range Max'
+]
+
