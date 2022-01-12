@@ -28,21 +28,21 @@ HIRING_TYPES = [
   'Part time'
 ]
 CANDIDATES_DATA = [
-  'Name',
-  'Address',
-  'Age',
-  'E-mail',
-  'Phone',
-  'Gender',
-  'Marital status',
-  'Nationality',
-  'Kid',
-  'Linkedin'
+  'Name': 'Sailor Moon',
+  'Address': 'Navegante da Lua, 01, Tóquio, Japan',
+  'Age': '24',
+  'E-mail': 'sailormoon@galaxia.com',
+  'Phone': '(03) 1234-5678',
+  'Gender': 'female',
+  'Marital status': 'single',
+  'Nationality': 'japanese',
+  'Kid': '0',
+  'Linkedin': 'www.linkedin.com/sailormoon'
 ]
 OFFICES_DATA = [
-'Name',
-'Address',
-'Phone'
+'Name': 'Samsung',
+'Address': 'Universe, 07, Tóquio, Japan',
+'Phone': '(03)9876-5432'
 ] 
 COMPANIES_DATA = [
   'Name'
