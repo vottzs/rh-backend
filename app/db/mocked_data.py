@@ -1,5 +1,6 @@
 HIRING_STAGES = [
   'Applied',
+  'Resume Analysis',
   'Contacted',
   'Interview',
   'Interview Done',
