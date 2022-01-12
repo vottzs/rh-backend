@@ -6,6 +6,6 @@ def add_views(app: Flask):
 
 def get_hiring_stages():
     response_object = {'status': 'success'}
-    response_object['hiring_stages'] = HIRING_STAGES
+    response_object['hiring_stages'] = DEFAULT_HIRING_STAGES
     response = jsonify(response_object)
     return response
