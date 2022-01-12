@@ -8,4 +8,5 @@ HIRING_STAGES = [
   'Offer Accepted',
   'Offer Declined',
   'Hired'
-]
+
+'RESUME ANALYSIS']
