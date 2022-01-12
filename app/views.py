@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from app.db.mocked_data import HIRING_STAGES
+from app.db.mocked_data import DEFAULT_HIRING_STAGES
 
 def add_views(app: Flask):
     app.add_url_rule('/hiring_stages', view_func=get_hiring_stages)

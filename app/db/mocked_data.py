@@ -1,4 +1,4 @@
-HIRING_STAGES = [
+DEFAULT_HIRING_STAGES = [
   'Applied',
   'Resume Analysis',
   'Contacted',
