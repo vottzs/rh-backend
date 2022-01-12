@@ -7,5 +7,33 @@ HIRING_STAGES = [
   'Offered',
   'Offer Accepted',
   'Offer Declined',
-  'Hired'
+  'Hired',
+  'name',
+  'address',
+  'age',
+  'e-mail',
+  'phone',
+  'gender',
+  'marital status',
+  'nationality',
+  'kid',
+  'Linkedin'
+]
+
+JOB_STATUS = [
+  'Private',
+  'Published',
+  'Accepting Candidates'
+]
+
+JOB_BENEFITS = [
+  'Vacations',
+  'Life Insurance',
+  'Parental Leaving'
+]
+
+HIRING_TYPES = [
+  'Contract',
+  'Full time',
+  'Part time'
 ]
