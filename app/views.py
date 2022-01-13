@@ -24,36 +24,36 @@ def get_default_hiring_stages():
 
 def get_job_benefits_options():
     response_object = {'status': 'success'}
-    response_object['job_benefits_options']
+    response_object['job_benefits_options'] = JOB_BENEFITS_OPTIONS
     response = jsonfy(response_object)
     return response
 
 def get_hiring_types():
     response_object = {'status': 'success'}
-    response_object['hiring_types']
+    response_object['hiring_types'] = HIRING_TYPES
     response = jsonfy(response_object)
     return response
 
 def get_hiring_stages():
     response_object = {'status': 'success'}
-    response_object['hiring_stages']
+    response_object['hiring_stages'] = HIRING_STAGES
     response = jsonfy(response_object)
     return response
 
 def get_candidates():
     response_object = {'status': 'success'}
-    response_object['candidates']
+    response_object['candidates'] = CANDIDATES
     response = jsonfy(response_object)
     return response
 
 def get_offices():
     response_object = {'status': 'success'}
-    response_object['offices']
+    response_object['offices'] = OFFICES
     response = jsonfy(response_object)
     return response
 
 def get_job_postings():
     response_object = {'status': 'success'}
-    response_object['job_postings']
+    response_object['job_postings'] = JOB_POSTINGS
     response = jsonfy(response_object)
     return response
