@@ -10,18 +10,18 @@ def add_views(app: Flask):
 
 def get_hiring_stages():
     response_object = {'status': 'success'}
-    response_object['api/v1/hiring_stages'] = DEFAULT_HIRING_STAGES
+    response_object['hiring_stages'] = DEFAULT_HIRING_STAGES
     response = jsonify(response_object)
     return response
 
     def get_candidates():
     response_object = {'status': 'success'}
-    response_object['api/v1/candidates'] = CANDIDATES
+    response_object['candidates'] = CANDIDATES
     response = jsonify(response_object)
     return response
 
     def get_job_postings():
     response_object = {'status': 'success'}
-    response_object['api/v1/job_postings'] = JOB_POSTINGS
+    response_object['job_postings'] = JOB_POSTINGS
     response = jsonify(response_object)
     return response
