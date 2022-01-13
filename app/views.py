@@ -1,11 +1,11 @@
 from flask import Flask, jsonify
 from app.db.mocked_data import DEFAULT_HIRING_STAGES
-from app.db.mockes_data import JOB_BENEFITS_OPTIONS
+from app.db.mocked_data import JOB_BENEFITS_OPTIONS
 from app.db.mocked_data import HIRING_TYPES
-from app.db.mockes_data import HIRING_STAGES
+from app.db.mocked_data import HIRING_STAGES
 from app.db.mocked_data import CANDIDATES
-from app.db.mockes_data import OFFICES
-from app.db.mockes_data import JOB_POSTINGS
+from app.db.mocked_data import OFFICES
+from app.db.mocked_data import JOB_POSTINGS
 
 def add_views(app: Flask):
     app.add_url_rule('/api/v1/default_hiring_stages', view_func=get_default_hiring_stages)
