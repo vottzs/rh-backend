@@ -40,35 +40,35 @@ HIRING_STAGES = [
 
 CANDIDATES = [
     {   
-        'id': '1',
+        'id': 1,
         'name': 'Michelangelo Tartaruga Ninja',
         'address': 'Boeiro de Rua, 1, New York, NY, USA',
         'phone': '+1 (212) 846-2543',
         'linkedin': 'www.linkedin.com/michelangelo',
     },
     {   
-        'id': '2',
+        'id': 2,
         'name': 'Leonardo Tartaruga Ninja',
         'address': 'Boeiro de Rua, 1, New York, NY, USA',
         'phone': '+1 (212) 846-2543',
         'linkedin': 'www.linkedin.com/leonardo',
     },
     {   
-        'id': '3',
+        'id': 3,
         'name': 'Rafael Tartaruga Ninja',
         'address': 'Boeiro de Rua, 1, New York, NY, USA',
         'phone': '+1 (212) 846-2543',
         'linkedin': 'www.linkedin.com/rafael',
     },
     {   
-        'id' : '4',
+        'id' : 4,
         'name': 'Donatello Tartaruga Ninja',
         'address': 'Boeiro de Rua, 1, New York, NY, USA',
         'phone': '+1 (212) 846-2543',
         'linkedin': 'www.linkedin.com/donatello',
     },
     {   
-        'id': '5',
+        'id': 5,
         'name': 'Senhor Splinter Rato',
         'address': 'Boeiro de Rua, 1, New York, NY, USA',
         'phone': '+1 (212) 846-2543',
