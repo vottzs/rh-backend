@@ -115,3 +115,12 @@ JOB_POSTINGS = [
         'salary_max': 10000,
     },
 ]
+
+CARROS = {
+  'fiat': {
+    'modelo': 'punto'
+  },
+  'jeep': {
+    'modelo': 'compass'
+  }
+}
