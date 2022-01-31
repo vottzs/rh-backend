@@ -37,3 +37,4 @@
     $ .\env\Scripts\activate
     
     (env)$ python server.py
+ 
