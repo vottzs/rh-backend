@@ -1,7 +1,7 @@
 """
 Exports example data from project to database.
 """
-
+import os
 import pymongo
 from app.db.mocked_data import DEFAULT_HIRING_STAGES, CANDIDATES, JOB_POSTINGS
 
@@ -22,7 +22,8 @@ def migrate_hiring_stages(db):
     print('default hiring stages inserted')
 
 if __name__ == "__main__":
-    client = pymongo.MongoClient("mongodb+srv://mentoria:QLtno6PrgA5clWDm@cluster0.ajhwu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    CONNECTION_STRING = os.environ.get('GRHCONNECTIONSTRING')
+    client = pymongo.MongoClient(CONNECTION_STRING)
     db = client.gestaorh
     migrate_candidates(db)
     migrate_job_postings(db)
