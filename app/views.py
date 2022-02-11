@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask.globals import request
-from app.db.mocked_data import DEFAULT_HIRING_STAGES, CANDIDATES, JOB_POSTINGS
+from app.db.mocked_data import CANDIDATES, JOB_POSTINGS
+from app.db.mongodb import hiring_stages, candidates
 
 def add_views(app: Flask):
     app.add_url_rule('/api/v1/hiring_stages', view_func=get_hiring_stages)
@@ -11,7 +12,8 @@ def add_views(app: Flask):
 
 def get_hiring_stages():
     response_object = {'status': 'success'}
-    response_object['hiring_stages'] = DEFAULT_HIRING_STAGES
+    database_result = hiring_stages.find_one()
+    response_object['hiring_stages'] = database_result['values']
     response = jsonify(response_object)
     return response
 
@@ -20,13 +22,9 @@ def get_candidates():
     Stage = request.args.get('Stage')
     response_object = {'status': 'success'}
     if Stage is not None:
-        filtered_cadidates = []
-        for candidate in CANDIDATES:
-            if candidate['Stage'] == Stage:
-                filtered_cadidates.append(candidate)
-        response_object['candidates'] = filtered_cadidates
+        response_object['candidates'] = candidates.find_by_stage(Stage)
     else:
-        response_object['candidates'] = CANDIDATES
+        response_object['candidates'] = candidates.find_all()
     response = jsonify(response_object)
     return response
 
@@ -40,14 +38,13 @@ def get_job_postings():
 
 def get_candidate(candidate_id):
     response_object = {'status': 'success'}
-    candidate = search_on_list(CANDIDATES, 'id', int(candidate_id))
+    if candidate_id is None:
+        return {'status': 'failed'}
+    candidate_id = int(candidate_id)
+    candidate = candidates.find_one((candidate_id))
     if request.method == 'PATCH':
         patch_data = request.json
-        candidate['Stage'] = patch_data ['Stage']
+        candidates.move_candidate((candidate_id), patch_data['Stage'])
     response_object['candidate'] = candidate
     response = jsonify(response_object)
     return response
-
-
-def search_on_list(list_of_dicts, key, value):
-    return next(item for item in list_of_dicts if item.get(key) == value)

@@ -9,7 +9,7 @@ def migrate_job_postings(db):
         db.job_postings.insert_one(job_posting)
 
 def migrate_hiring_stages(db):
-    db.defaut_hiring_stages.insert_one({'version': 1, 'values': DEFAULT_HIRING_STAGES, 'active': True})
+    db.default_hiring_stages.insert_one({'version': 1, 'values': DEFAULT_HIRING_STAGES, 'active': True})
 
 if __name__ == "__main__":
     client = pymongo.MongoClient("mongodb+srv://leo_rh:Lobo@cluster0.286wa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
