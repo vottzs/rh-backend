@@ -1,5 +1,5 @@
 import pymongo
-DATABASE = pymongo.MongoClient("mongodb+srv://leo_rh:Lobo@cluster0.286wa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").gestaorh
+from app.db.mongodb import DATABASE
 
 def find_all ():
     result = list(DATABASE.candidates.find({}, {'_id': False}))
