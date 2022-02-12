@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask.globals import request
-from app.db.mocked_data import CANDIDATES, JOB_POSTINGS
+from app.db.mocked_data import JOB_POSTINGS
 from app.db.mongodb import hiring_stages, candidates
 
 def add_views(app: Flask):
