@@ -1,4 +1,6 @@
+from lzma import FILTER_DELTA
 from flask import Flask, jsonify
+from flask.globals import request
 from app.db.mocked_data import DEFAULT_HIRING_STAGES, CANDIDATES, JOB_POSTINGS
 
 def add_views(app: Flask):
@@ -16,8 +18,16 @@ def get_hiring_stages():
 
 
 def get_candidates():
+    stage = request.args.get('stage')
     response_object = {'status': 'success'}
-    response_object['candidates'] = CANDIDATES
+    if stage is not None:
+        filtered_candidates = []
+        for candidate in CANDIDATES:
+            if candidate['stage'] == stage:
+                filtered_candidates.append(candidate)
+        response_object['candidates'] = filtered_candidates
+    else:
+        response_object['candidates'] = CANDIDATES
     response = jsonify(response_object)
     return response
 
