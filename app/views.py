@@ -6,7 +6,7 @@ from app.db.mocked_data import DEFAULT_HIRING_STAGES, CANDIDATES, JOB_POSTINGS
 def add_views(app: Flask):
     app.add_url_rule('/api/v1/hiring_stages', view_func=get_hiring_stages)
     app.add_url_rule('/api/v1/candidates', view_func=get_candidates)
-    app.add_url_rule('/api/v1/candidates/<candidate_id>', view_func=get_candidate)
+    app.add_url_rule('/api/v1/candidates/<candidate_id>', view_func=get_candidate, methods=['GET', "PATCH"])
     app.add_url_rule('/api/v1/job_postings', view_func=get_job_postings)
 
 
@@ -41,7 +41,13 @@ def get_job_postings():
 
 def get_candidate(candidate_id):
     response_object = {'status': 'success'}
-    response_object['candidate'] = search_on_list(CANDIDATES, 'id', int(candidate_id))
+    if candidate_id is None:
+        return {'status': 'failed'}
+    candidate = search_on_list(CANDIDATES, 'id', int(candidate_id))
+    if request.method == 'PATCH':
+        patch_data = request.json
+        if 'stage' in patch_data:
+            candidate['stage'] = patch_data['stage']
     response = jsonify(response_object)
     return response
 
