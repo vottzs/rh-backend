@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask.globals import request
-from app.db.mocked_data import JOB_POSTINGS
+from app.db.mocked_data import JOB_POSTINGS, OFFICES
 from app.db.mongodb import hiring_stages, candidates
 
 def add_views(app: Flask):
@@ -8,6 +8,7 @@ def add_views(app: Flask):
     app.add_url_rule('/api/v1/candidates', view_func=get_candidates)
     app.add_url_rule('/api/v1/candidates/<candidate_id>', view_func=get_candidate, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/job_postings', view_func=get_job_postings)
+    app.add_url_rule('/api/v1/offices', view_func=get_offices)
 
 
 def get_hiring_stages():
@@ -28,13 +29,17 @@ def get_candidates():
     response = jsonify(response_object)
     return response
 
-    
 def get_job_postings():
     response_object = {'status': 'success'}
     response_object['job_postings'] = JOB_POSTINGS
     response = jsonify(response_object)
     return response
 
+def get_offices():
+    response_object = {'status': 'success'}
+    response_object['offices'] = OFFICES
+    response = jsonify(response_object)
+    return response
 
 def get_candidate(candidate_id):
     response_object = {'status': 'success'}
