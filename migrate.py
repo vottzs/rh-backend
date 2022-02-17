@@ -30,3 +30,4 @@ if __name__ == "__main__":
     migrate_job_postings(db)
     migrate_hiring_stages(db)
     migrate_offices(db)
+    

@@ -11,14 +11,28 @@ DEFAULT_HIRING_STAGES = [
     'Hired'
 ]
 
-JOB_BENEFITS_OPTIONS = [
-    'Health Insurance',
-    'Disability Insurance',
-    'Life Insurance',
-    'Paid Time Off (PTO)',
-    'Tuiton Assistance',
-    'Parental Leaving',
-    'Remote work'
+JOB_BENEFITS = [
+    {
+    'name': 'Health Insurance',
+    },
+    {
+    'name': 'Disability Insurance',
+    },
+    {
+    'name': 'Life Insurance',
+    },
+    {
+    'name': 'Paid Time Off (PTO)',
+    },
+    {
+    'name': 'Tuiton Assistance',
+    },
+    {
+    'name': 'Parental Leaving',
+    },
+    {
+    'name:' 'Remote work',
+    },
 ]
 
 HIRING_TYPES = [
