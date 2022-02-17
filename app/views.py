@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from flask.globals import request
 from app.db.mocked_data import JOB_POSTINGS
-from app.db.mongodb import hiring_stages, candidates, offices, benefits
+from app.db.mongodb import hiring_stages, candidates, offices, benefits, hiring_types
 
 def add_views(app: Flask):
     app.add_url_rule('/api/v1/hiring_stages', view_func=get_hiring_stages)
@@ -10,6 +10,7 @@ def add_views(app: Flask):
     app.add_url_rule('/api/v1/job_postings', view_func=get_job_postings)
     app.add_url_rule('/api/v1/offices', view_func=get_offices, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/benefits', view_func=get_benefits, methods=['GET', 'PATCH'])
+    app.add_url_rule('/api/v1/hiring_types', view_func=get_hiring_types, methods=['GET', 'PATCH'])
 
 
 def get_hiring_stages():
@@ -51,6 +52,15 @@ def get_benefits():
     if request.method == 'PATCH':
         patch_data = request.json
         benefits.new_benefit(patch_data)
+    response = jsonify(response_object)
+    return response
+
+def get_hiring_types():
+    response_object = {'status': 'success'}
+    response_object['hiring_types'] = hiring_types.find_all_hiring_types()
+    if request.method == 'PATCH':
+        patch_data = request.json
+        hiring_types.new_hiring_type(patch_data)
     response = jsonify(response_object)
     return response
 
