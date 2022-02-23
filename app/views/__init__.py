@@ -22,3 +22,4 @@ def add_views(app: Flask):
     app.add_url_rule('/api/v1/offices', view_func=get_offices, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/benefits', view_func=get_benefits, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/hiring_types', view_func=get_hiring_types, methods=['GET', 'PATCH'])
+    

@@ -15,3 +15,4 @@ def find_one(candidate_id):
 
 def move_candidate(candidate_id, stage):
     DATABASE.candidates.update_one({'id': candidate_id}, {'$set': {'stage': stage}})
+    
