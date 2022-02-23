@@ -1,3 +1,6 @@
+"""
+Exports example data from project to database
+"""
 import os
 import pymongo
 from app.db.mocked_data import DEFAULT_HIRING_STAGES, CANDIDATES, JOB_POSTINGS, OFFICES

@@ -1,3 +1,6 @@
+"""
+Example data to start the database
+"""
 DEFAULT_HIRING_STAGES = [
     'Applied',
     'Resume Analysis',
