@@ -20,7 +20,7 @@ def migrate_offices(db):
 
 def reset_database(db):
     db.candidates.drop()
-    db.job_posting.drop()
+    db.job_postings.drop()
     db.default_hiring_stages.drop()
     db.offices.drop()
 
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     db = client.gestaorh
     reset_database(db)
     migrate_candidates(db)
-    migrate_job_postings(db)
     migrate_hiring_stages(db)
     migrate_offices(db)
+    migrate_job_postings(db)
     
