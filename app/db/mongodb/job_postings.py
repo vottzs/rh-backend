@@ -17,3 +17,49 @@ def find_all_job_postings ():
     """
     result = list(DATABASE.job_postings.find({}, {'_id': False}))
     return result
+
+def find_one(job_posting_tittle):
+    """
+    Returns one job_posting 
+    
+    Args:
+        job_posting_tittle (int): job_posting identifier
+    Returns:
+        result (dict): job_posting information
+    """
+    #_id (ObjectId) is not needed, {'_id': False} filters that from database
+    result = DATABASE.job_postings.find_one({'tittle': job_posting_tittle}, {'_id': False})
+    return result
+
+def activate_job_posting(job_posting_tittle, stage):
+    """
+    Updates the stage for a job_posting, moving it on the hiring workflow.
+    Args:
+        job_posting_tittle (int): job_posting identifier
+        stage (string): new stage for the job_posting
+    """
+    #_id (ObjectId) is not needed, {'_id': False} filters that from database
+    DATABASE.job_postings.update_one({'tittle': job_posting_tittle}, {'$set': {'stage': stage}})
+
+def find_by_stage(stage):
+    """
+    Returns all job_postings in a given stage from database.
+    Args:
+        stage (string): which stage is expected
+    
+    Returns:
+        result (list): job_postings with stage equals to the given stage
+    """
+    #_id (ObjectId) is not needed, {'_id': False} filters that from database
+    result = list(DATABASE.job_postings.find({'stage': stage}, {'_id': False}))
+    return result
+
+def reset_job_postings(stage):
+    """
+    Updates the stage for a job_posting, moving it on the hiring workflow.
+    Args:
+        job_posting_id (int): job_posting identifier
+        stage (string): new stage for the job_posting
+    """
+    #_id (ObjectId) is not needed, {'_id': False} filters that from database
+    DATABASE.job_postings.update_one({'stage': stage}, {'$set': {'stage': 'inactive'}})
