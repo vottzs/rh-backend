@@ -1,6 +1,6 @@
 from flask import jsonify
 from flask.globals import request
-from app.db.mongodb.job_postings import new_job_posting, find_all_job_postings, find_one, activate_job_posting, find_by_stage, reset_job_postings
+from app.db.mongodb.job_postings import new_job_posting, find_all_job_postings, find_one, activate_job_posting, find_by_stage, reset_job_postings, find_one_to_export
 
 def get_job_postings():
     """
@@ -50,6 +50,28 @@ def get_job_posting(job_posting_tittle):
             #update job_posting stage on database
             activate_job_posting((job_posting_tittle), patch_data['stage'])
     #include job_posting information on the response
+    response_object['job_posting'] = job_posting
+    #transform response to a JSON format
+    response = jsonify(response_object)
+    return response
+
+def export_job_posting(stage):
+    """
+    Returns a job_posting for an given stage.
+
+    Params:
+        stage (string): job_posting identifier
+
+    Return:
+        response: JSON object with job_posting information
+    """
+    response_object = {'status': 'success'}
+    #if job_posting is not information, return error
+    if stage is None:
+        return {'status': 'failed'}
+
+    #recover most updated information about the job_posting
+    job_posting = find_one_to_export((stage))
     response_object['job_posting'] = job_posting
     #transform response to a JSON format
     response = jsonify(response_object)

@@ -31,6 +31,19 @@ def find_one(job_posting_tittle):
     result = DATABASE.job_postings.find_one({'tittle': job_posting_tittle}, {'_id': False})
     return result
 
+def find_one_to_export(stage):
+    """
+    Returns one job_posting 
+    
+    Args:
+        stage (string): job_posting identifier
+    Returns:
+        result (dict): job_posting information
+    """
+    #_id (ObjectId) is not needed, {'_id': False} filters that from database
+    result = DATABASE.job_postings.find_one({'stage': stage}, {'_id': False})
+    return result
+
 def activate_job_posting(job_posting_tittle, stage):
     """
     Updates the stage for a job_posting, moving it on the hiring workflow.
