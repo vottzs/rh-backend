@@ -115,17 +115,17 @@ CANDIDATES = [
 
 OFFICES = [
     {
-        'tittle': 'Headquarter',
+        'title': 'Headquarter',
         'address': '1515 Broadway New York, New York 10036 ',
         'phone': '+1 (201) 766-7329'
     },
     {
-        'tittle': 'Office 1',
+        'title': 'Office 1',
         'address': '',
         'phone': '+1 (212) 846-6006'
     },
     {
-        'tittle': 'Office 2',
+        'title': 'Office 2',
         'address': '17 - 29 Hawley Crescent, Camden, London NW1 8TT',
         'phone': '+1 (212) 846-6007'
     },

@@ -34,13 +34,13 @@ def get_job_postings():
     response = jsonify(response_object)
     return response
 
-def get_job_posting(job_posting_tittle):
+def get_job_posting(job_posting_title):
     response_object = {'status': 'success'}
-    #if job_posting_tittle is not information, return error
-    if job_posting_tittle is None:
+    #if job_posting_title is not information, return error
+    if job_posting_title is None:
         return {'status': 'failed'}
     #recover most updated information about the job_posting
-    job_posting = find_one((job_posting_tittle))
+    job_posting = find_one((job_posting_title))
     #if the request method is PATCH, update the job_posting Stage
     if request.method == 'PATCH':
         #recover data sent from frontend
@@ -48,7 +48,7 @@ def get_job_posting(job_posting_tittle):
         #check if stage was informed
         if 'stage' in patch_data:
             #update job_posting stage on database
-            activate_job_posting((job_posting_tittle), patch_data['stage'])
+            activate_job_posting((job_posting_title), patch_data['stage'])
     #include job_posting information on the response
     response_object['job_posting'] = job_posting
     #transform response to a JSON format

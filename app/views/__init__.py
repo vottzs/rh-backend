@@ -18,7 +18,7 @@ def add_views(app: Flask):
     app.add_url_rule('/api/v1/candidates', view_func=get_candidates)
     app.add_url_rule('/api/v1/candidates/<candidate_id>', view_func=get_candidate, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/job_postings', view_func=get_job_postings, methods=['GET', 'PATCH', 'POST'])
-    app.add_url_rule('/api/v1/job_postings/<job_posting_tittle>', view_func=get_job_posting, methods=['GET', 'PATCH'])
+    app.add_url_rule('/api/v1/job_postings/<job_posting_title>', view_func=get_job_posting, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/job_postings/import/<stage>', view_func=export_job_posting, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/offices', view_func=get_offices, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/benefits', view_func=get_benefits, methods=['GET', 'PATCH'])

@@ -18,17 +18,17 @@ def find_all_job_postings ():
     result = list(DATABASE.job_postings.find({}, {'_id': False}))
     return result
 
-def find_one(job_posting_tittle):
+def find_one(job_posting_title):
     """
     Returns one job_posting 
     
     Args:
-        job_posting_tittle (int): job_posting identifier
+        job_posting_title (int): job_posting identifier
     Returns:
         result (dict): job_posting information
     """
     #_id (ObjectId) is not needed, {'_id': False} filters that from database
-    result = DATABASE.job_postings.find_one({'tittle': job_posting_tittle}, {'_id': False})
+    result = DATABASE.job_postings.find_one({'title': job_posting_title}, {'_id': False})
     return result
 
 def find_one_to_export(stage):
@@ -44,15 +44,15 @@ def find_one_to_export(stage):
     result = DATABASE.job_postings.find_one({'stage': stage}, {'_id': False})
     return result
 
-def activate_job_posting(job_posting_tittle, stage):
+def activate_job_posting(job_posting_title, stage):
     """
     Updates the stage for a job_posting, moving it on the hiring workflow.
     Args:
-        job_posting_tittle (int): job_posting identifier
+        job_posting_title (int): job_posting identifier
         stage (string): new stage for the job_posting
     """
     #_id (ObjectId) is not needed, {'_id': False} filters that from database
-    DATABASE.job_postings.update_one({'tittle': job_posting_tittle}, {'$set': {'stage': stage}})
+    DATABASE.job_postings.update_one({'title': job_posting_title}, {'$set': {'stage': stage}})
 
 def find_by_stage(stage):
     """
