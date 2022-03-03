@@ -41,7 +41,7 @@ def get_candidate(candidate_id):
     response_object = {'status': 'success'}
     if candidate_id is None:
         return {'status': 'failed'}
-    candidate_id = int[candidate_id]
+    candidate_id = int(candidate_id)
     candidate = candidates.find_one(candidate_id)
     if request.method == 'PATCH':
         patch_data = request.json
@@ -50,3 +50,5 @@ def get_candidate(candidate_id):
     response_object['candidate'] = candidate
     response = jsonify(response_object)
     return response
+
+    
