@@ -39,6 +39,7 @@ def get_job_postings():
 
 def get_candidate(candidate_id):
     response_object = {'status': 'success'}
+    print('##############CANDIDATEID#############',candidate_id)
     if candidate_id is None:
         return {'status': 'failed'}
     candidate_id = int(candidate_id)
