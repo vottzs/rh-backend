@@ -133,24 +133,36 @@ OFFICES = [
 
 JOB_POSTINGS = [
     {
+        'office': '',
+        'hiring_type': '',
+        'hiring_stage': '',
         'title': 'Quality Assurance',
         'description': 'A quality assurance specialist ensures that the final product observes the company\'s quality standards. In general, these detail-oriented professionals are responsible for the development and implementation of inspection activities, the detection and resolution of problems, and the delivery of satisfactory outcomes.',
         'salary_min': 1000,
         'salary_max': 5000,
     },
     {
+        'office': '',
+        'hiring_type': '',
+        'hiring_stage': '',
         'title': 'Recruiter',
         'description': 'Recruiters are responsible for meet hiring goals by filling open positions with talented and qualified candidates. This entails sourcing and screening candidates, coordinating the interview process, and facilitating offers and employment negotiations, all while ensuring candidates have a pleasant experience.',
         'salary_min': 2000,
         'salary_max': 2500,
     },
     {
+        'office': '',
+        'hiring_type': '',
+        'hiring_stage': '',
         'title': 'Baker',
         'description': 'Prepares, produces, and bakes breakfast pastries, breads, rolls, and some desserts. Develops new products for a la carte or menus on a rotating basis. Decorates baked goods, such as cream pies, using a pastry bag.',
         'salary_min': 500,
         'salary_max': 6500,
     },
     {
+        'office': '',
+        'hiring_type': '',
+        'hiring_stage': '',
         'title': 'Car Salesman',
         'description': 'A Car Salesperson, or Auto Sales Representative, is responsible for selling cars, trucks and vans for personal and commercial use. Their duties include meeting with customers to discuss their needs, promoting sales offers at their dealership and participating in test drives with interested customers.',
         'salary_min': 4000,

@@ -3,6 +3,10 @@ All database operations related to offices.
 """
 from app.db.mongodb import DATABASE
 
+def parse_offices(offices):
+    for item in offices:
+        item['_id'] = str(item['_id'])
+
 def new_office(new_office_var):
     """
     Creates  a new office.
@@ -19,6 +23,5 @@ def find_all_offices ():
     for item in result:
         #for every ObjectId transforms the _Id in a creation date
         item['creation_date'] = item['_id'].generation_time
-        #deletes the ObjectId in the result cause it isn't serializable
-        del item['_id']
+    parse_offices(result)
     return result

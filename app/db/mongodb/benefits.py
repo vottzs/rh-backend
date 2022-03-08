@@ -3,6 +3,10 @@ All database operations related to benefits.
 """
 from app.db.mongodb import DATABASE
 
+def parse_benefits(benefits):
+    for item in benefits:
+        item['_id'] = str(item['_id'])
+
 def new_benefit(new_benefit_var):
     """
     Creates  a new office.
@@ -19,6 +23,5 @@ def find_all_benefits ():
     for item in result:
         #for every ObjectId transforms the _Id in a creation date
         item['creation_date'] = item['_id'].generation_time
-        #deletes the ObjectId in the result cause it isn't serializable
-        del item['_id']
+    parse_benefits(result)
     return result
