@@ -47,3 +47,11 @@ def move_candidate(candidate_id, stage):
     #_id (ObjectId) is not needed, {'_id': False} filters that from database
     DATABASE.candidates.update_one({'id': candidate_id}, {'$set': {'stage': stage}})
     
+
+def new_candidate(new_candidate_var):
+    """
+    Creates  a new candidate.
+    Args:
+        new_candidate_var (dict): new candidate information
+    """
+    DATABASE.candidates.insert_one(new_candidate_var)

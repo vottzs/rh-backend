@@ -1,6 +1,6 @@
 from flask import jsonify
 from flask.globals import request
-from app.db.mongodb.candidates import find_all, find_by_stage, find_one, move_candidate
+from app.db.mongodb.candidates import find_all, find_by_stage, find_one, move_candidate, new_candidate
 
 def get_candidates():
     """
@@ -49,5 +49,12 @@ def get_candidate(candidate_id):
     #include candidate information on the response
     response_object['candidate'] = candidate
     #transform response to a JSON format
+    response = jsonify(response_object)
+    return response
+
+def create_candidate():
+    response_object = {'status': 'success'}
+    patch_data = request.json
+    new_candidate(patch_data)
     response = jsonify(response_object)
     return response

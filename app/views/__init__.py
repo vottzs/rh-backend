@@ -2,7 +2,7 @@
 Package responsible for handle requests from a frontend.
 """
 from flask import Flask
-from app.views.candidates import get_candidates, get_candidate
+from app.views.candidates import get_candidates, get_candidate, create_candidate
 from app.views.hiring_stages import get_hiring_stages
 from app.views.offices import get_offices
 from app.views.benefits import get_benefits
@@ -16,6 +16,7 @@ def add_views(app: Flask):
     """
     app.add_url_rule('/api/v1/hiring_stages', view_func=get_hiring_stages)
     app.add_url_rule('/api/v1/candidates', view_func=get_candidates)
+    app.add_url_rule('/api/v1/candidates/create', view_func=create_candidate, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/candidates/<candidate_id>', view_func=get_candidate, methods=['GET', 'PATCH'])
     app.add_url_rule('/api/v1/job_postings', view_func=get_job_postings, methods=['GET', 'PATCH', 'POST'])
     app.add_url_rule('/api/v1/job_postings/<_id>', view_func=get_job_posting, methods=['GET', 'PATCH'])
